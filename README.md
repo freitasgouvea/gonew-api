@@ -123,7 +123,7 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-  "userId": "0x0sfgsd"
+  "userId": "0x0sfgsd" // string
 }
 ```
 
@@ -155,9 +155,9 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address da Wallet que irá transferir
-	"_to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
-	"_value": 1000 // Quantidade de Tokens
+	"sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address da Wallet que irá transferir
+	"to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
+	"value": 1000 // Quantidade de Tokens
 }
 ```
 
@@ -185,9 +185,9 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Minter
-	"_to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
-	"_amount": 10000 // Quantidade de Tokens
+	"sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Minter
+	"to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
+	"amount": 10000 // Quantidade de Tokens
 }
 ```
 
@@ -215,9 +215,9 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Burner
-	"_from": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que estão os Tokens
-	"_amount": 10000 // Quantidade de Tokens
+	"sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Burner
+	"from": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que estão os Tokens
+	"amount": 10000 // Quantidade de Tokens
 }
 ```
 
