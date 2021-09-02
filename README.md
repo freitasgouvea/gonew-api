@@ -5,105 +5,6 @@ API para interagir com o Token.
 * Nome: Token
 * Versão: 1.0.0
 
-## Como usar esta API
-
-Para usar está API você precisa: 
-
-* Clonar o repositório, 
-* Instalar as dependências, 
-* Configurar o arquivo .env, 
-* Executar uma versão local da aplicação, 
-* Acessar e executar os métodos por meio do SWAGGER.
-
-### Requisitos
-
-- [NPM](https://www.npmjs.com/get-npm): `>=6.13.4`
-- [GIT](https://git-scm.com/downloads): `>=2.21.1`
-- [Node.js](https://nodejs.org/download/release/latest-v10.x/): `>=10.0.0`
-
-### Instalar as dependências
-
-No terminal acesse a pasta raiz do repositório que foi clonado execute o comando para instalar as dependências:
-
-```
-npm install
-```
-
-Todas as dependências necessárias para executar a API serão instaladas no seu diretório.
-
-### Criar e configurar o arquivo .env
-
-Para poder executar a API é necessário criar na raiz do diretório o arquivo .env
-
-Clone o arquivo .env.example com as seguintes especificações:
-
-```
-MNENOMIC = // Your metamask's recovery words
-INFURA_API_KEY = // Your Infura API Key after its registration
-NETWORK_ID = // 1-Mainnet 3-Ropsten 4-Rinkeby 42-Kovan 1001-Development
-TOKEN = // Token Address
-```
-
-Após criar e configurar o .env a seu diretório já está configurado para executar a API.
-
-### Executar o nodemon no localhost
-
-No terminal acesse a pasta raiz do repositório que foi clonado execute o comando para executar a API:
-
-```
-npm start
-```
-
-Após executar este comando o nodemon será inicializado e a API já estará funcionando no endereço e porta http://localhost:3000/ ou naquele que você fizer o deploy da aplicação.
-
-### Acessar a API e executar um método por meio do swagger
-
-Com o nodemon sendo executado você pode acessar http://localhost:3000/swagger e executar os métodos disponíveis para interagir com o Token.
-
-Na página você pode selecionar um método GET/POST/PUT e clicar no botão TRY IT THIS.
-
-Os métodos GET podem ser executados com a introdução dos parâmetros nos campos requisitados. 
-
-No método GET / Balance por exemplo:
-
-```
-0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76
-```
-Também é possível fazer a consulta dos métodos GET através do PATH. 
-
-No método GET / Balance por exemplo:
-
-```
-http://localhost:3000/balance/0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76
-```
-
-Já os métodos POST/PUT podem ser executados com a edição do BODY com os parâmetros necessários. 
-
-O método POST / Transfer, por exemplo, recebe os seguintes parâmetros no JSON:
-
-```
-{
-  "privateKey": "string",
-  "_sender": "string",
-  "_to": "string",
-  "_amount": 0
-}
-```
-
-Após a edição clique em EXECUTE e o método será executado. 
-
-O retorno pode ser verificado no JSON de resposta. Exemplo:
-
-```
-{
-  "success": true,
-  "code": "200",
-  "message": "Success!",
-  "hash": "0x3690cc5be9eb433c68047fcb54bd325fe21ea04ab1facec5cc5b75467e2dea99",
-  "link": "https://rinkeby.etherscan.io/tx/0x3690cc5be9eb433c68047fcb54bd325fe21ea04ab1facec5cc5b75467e2dea99"
-}
-```
-
 ## Métodos da API
 
 A API do Token tem os seguintes métodos:
@@ -222,7 +123,7 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-  "quantity": 1 // quantidade de wallets que serão criadas
+  "userId": "0x0sfgsd"
 }
 ```
 
@@ -231,12 +132,12 @@ O método recebe como retorno os seguintes parâmetros:
 ```
 {
   "success": true,
+  "code": "200",
   "result": [
     {
       "index": 1,
-      "mnemonic": "month leave someone zebra clap explain account page tired put robot ancient",
-      "address": "0xC0fDcfc1E468c6dB915D12379670a6914ED6e758",
-      "privateKey": "9798fee0fca3f8d7a5cc36fb8ae822180170ed96164eb8acc8dad30bb60246ee"
+      "userId": "0x0sfgsd",
+      "address": "0xC0fDcfc1E468c6dB915D12379670a6914ED6e758"
     }
   ]
 }
@@ -254,7 +155,6 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"privateKey": "9798fee0fca3f8d7a5cc36fb8ae822180170ed96164eb8acc8dad30bb60246ee", // Private Key da Wallet que irá transferir
 	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address da Wallet que irá transferir
 	"_to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
 	"_value": 1000 // Quantidade de Tokens
@@ -285,7 +185,6 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"privateKey": "9798fee0fca3f8d7a5cc36fb8ae822180170ed96164eb8acc8dad30bb60246ee", // Private Key do Minter
 	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Minter
 	"_to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
 	"_amount": 10000 // Quantidade de Tokens
@@ -316,7 +215,6 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"privateKey": "9798fee0fca3f8d7a5cc36fb8ae822180170ed96164eb8acc8dad30bb60246ee", // Private Key do Burner
 	"_sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Burner
 	"_from": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que estão os Tokens
 	"_amount": 10000 // Quantidade de Tokens
@@ -332,6 +230,18 @@ O método recebe como retorno os seguintes parâmetros:
     "message": "Success.",
     "hash": "0xde9b97536f43782fb465e65a8f2b50a603eeb02574c4ebc59f3d1aecaad66b0c",
     "link": "https://rinkeby.etherscan.io/tx/0xde9b97536f43782fb465e65a8f2b50a603eeb02574c4ebc59f3d1aecaad66b0c"
+}
+```
+
+### Erros
+
+Caso o método não seja executado com sucesso a API irá retornar os seguintes parâmetros:
+
+```
+{
+    "success": false,
+    "code": "400",
+    "message": "Error",
 }
 ```
 
