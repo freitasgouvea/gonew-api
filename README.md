@@ -212,6 +212,10 @@ O método recebe como retorno os seguintes parâmetros:
 
 ### POST / Generate Wallet
 
+```
+'/generate-wallet/'
+```
+
 Por meio deste método é possível criar Wallets.
 
 Para executar este método é necessário informar os seguintes parâmetros no body da requisição, como por exemplo:
@@ -240,6 +244,10 @@ O método recebe como retorno os seguintes parâmetros:
 
 ### POST / Transfer
 
+```
+'/transfer/'
+```
+
 Por meio deste método é possível transferir Tokens de uma wallet para outra.
 
 Para executar este método é necessário informar os seguintes parâmetros no body da requisição, como por exemplo:
@@ -267,6 +275,10 @@ O método recebe como retorno os seguintes parâmetros:
 
 ### POST / Mint To
 
+```
+'/mint/'
+```
+
 Por meio deste método é possível mintar, ou seja, criar Tokens em uma wallet.
 
 Para executar este método é necessário informar os seguintes parâmetros no body da requisição, como por exemplo:
@@ -293,6 +305,10 @@ O método recebe como retorno os seguintes parâmetros:
 ```
 
 ### POST / Burn From
+
+```
+'/burn/'
+```
 
 Por meio deste método é possível queimar, ou seja, destruir Tokens de uma wallet.
 
