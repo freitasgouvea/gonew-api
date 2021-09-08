@@ -11,12 +11,12 @@ A API do Token tem os seguintes métodos:
 
 * GET / Version
 * GET / Balance
-* GET / Balance Ether
+* GET / Get Wallet Address
 * GET / Tx Status
 * POST / Generate Wallet
 * POST / Transfer
-* POST / Mint To
-* POST / Burn From
+* POST / Mint
+* POST / Burn
 
 ### GET / Version
 
@@ -60,7 +60,7 @@ O método recebe como retorno os seguintes parâmetros:
 }
 ```
 
-### GET / Wallet Address
+### GET / Get Wallet Address
 
 ```
 '/get-wallet-address/:userId'
