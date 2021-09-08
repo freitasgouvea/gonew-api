@@ -60,28 +60,28 @@ O método recebe como retorno os seguintes parâmetros:
 }
 ```
 
-### GET / Balance Ether
+### GET / Wallet Address
 
 ```
-'/balance-ether/:address'
+'/get-wallet-address/:userId'
 ```
 
-Por meio deste método é possível verificar o balanço de Ether de uma wallet.
+Por meio deste método é possível pesquisar o endereço de uma wallet através do user Id.
 
-Para executar este método é necessário informar no PATH o address da wallet, como por exemplo:
+Para executar este método é necessário informar no PATH o userId da wallet, como por exemplo:
 
 ```
-/balance-ether/0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76
+/balance/email@email.com
 ```
 
 O método recebe como retorno os seguintes parâmetros:
 
 ```
 {
-    "success": true,
-    "code": "200",
-    "message": "Success!",
-    "balance": "18.6554607026"
+  "success": true,
+  "code": "200",
+  "message": "Success!",
+  "address": "0x68447a38A3E317E9885FCad402962967c6930900"
 }
 ```
 
@@ -123,7 +123,7 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-  "userId": "0x0sfgsd" // string
+  "userId": "email@email.com" // string
 }
 ```
 
@@ -133,13 +133,9 @@ O método recebe como retorno os seguintes parâmetros:
 {
   "success": true,
   "code": "200",
-  "result": [
-    {
-      "index": 1,
-      "userId": "0x0sfgsd",
-      "address": "0xC0fDcfc1E468c6dB915D12379670a6914ED6e758"
-    }
-  ]
+  "message": "Sucess!",
+  "hash": "0x452288aa0e641a16db4bde42d1a0d2e359873d5435730f6bae8327e50a09fe69",
+  "link": "https://rinkeby.etherscan.io/tx/0x452288aa0e641a16db4bde42d1a0d2e359873d5435730f6bae8327e50a09fe69"
 }
 ```
 
@@ -173,7 +169,7 @@ O método recebe como retorno os seguintes parâmetros:
 }
 ```
 
-### POST / Mint To
+### POST / Mint
 
 ```
 '/mint/'
@@ -185,7 +181,6 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Minter
 	"to": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que irá receber
 	"amount": 10000 // Quantidade de Tokens
 }
@@ -203,7 +198,7 @@ O método recebe como retorno os seguintes parâmetros:
 }
 ```
 
-### POST / Burn From
+### POST / Burn
 
 ```
 '/burn/'
@@ -215,7 +210,6 @@ Para executar este método é necessário informar os seguintes parâmetros no b
 
 ```
 {
-	"sender": "0xf9c744832a2EE4D6f2256DC7BBaAb5f38273De76", // Address do Burner
 	"from": "0x17cA6A08758F4A078B9c53ca25E6F6736dF34094", // Address da Wallet que estão os Tokens
 	"amount": 10000 // Quantidade de Tokens
 }
